@@ -1,7 +1,110 @@
-<%= @post.title %><br>
-<%= @post.content %>
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Wed Jul 20 2016 15:59:50 GMT+0000 (UTC) -->
+<html data-wf-site="578f8715c36943ed2cc2086a" data-wf-page="578f9d80e9a4e4fd0e2cc575">
+<head>
+  <meta charset="utf-8">
+  <title>ARTICLE-SHOW</title>
+  <meta property="og:title" content="ARTICLE-SHOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/nathan-s-radical-site.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","PT Sans:400,400italic,700,700italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
+  <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+</head>
+<body>
+  <div class="navigation-bar w-nav" data-animation="default" data-collapse="medium" data-contain="1" data-duration="400">
+    <div class="w-container">
+      <a class="w-nav-brand" href="index.html">
+        <div class="site-name">Nathan</div>
+      </a>
+      <nav class="navigation-menu w-nav-menu" role="navigation"><a class="navigation-link w-nav-link" href="index.html">Home</a><a class="navigation-link w-nav-link" href="all-posts.html">Articles</a><a class="navigation-link w-nav-link" href="about.html">About</a><a class="navigation-link w-nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="menu-button w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3 w-hidden-small w-hidden-tiny">
+          <div class="white-wrapper"><img class="circle-profile" src="images/photo-1437623889155-075d40e2e59f-bw.jpg">
+            <p class="site-description">Nathan is an awesome designer simple responsive blog template. Easily add new posts using the Editor or change layout and design using the Designer.</p>
+            <div class="grey-rule"></div>
+            <h2 class="small-heading">Featured Posts:</h2>
+            <h5 class="jus">ibero, a pharetra augue. Nulla vitae elit libero, a pharetra augue</h5>
+            <h5 class="jus">malesuada magna mollis euismod. Aenean eu leo quam.</h5>
+            <div class="grey-rule"></div>
+            <div class="social-link-group">
+              <a class="social-icon-link w-inline-block" href="#"><img src="images/social-03.svg" width="25">
+              </a>
+              <a class="social-icon-link w-inline-block" href="#"><img src="images/social-07.svg" width="25">
+              </a>
+              <a class="social-icon-link w-inline-block" href="#"><img src="images/social-18.svg" width="25">
+              </a>
+              <a class="social-icon-link w-inline-block" href="#"><img src="images/social-09.svg" width="25">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="content-column w-col w-col-9">
+          <div class="sidebar-on-mobile">
+            <div class="white-wrapper"><img class="circle-profile" src="images/photo-1437623889155-075d40e2e59f-bw.jpg">
+              <p class="site-description">Nathan is an awesome designer simple responsive blog template. Easily add new posts using the Editor or change layout and design using the Designer.</p>
+              <div class="grey-rule"></div>
+              <h2 class="small-heading">Featured Posts:</h2>
+              <h5 class="jus">ibero, a pharetra augue. Nulla vitae elit libero, a pharetra augue</h5>
+              <h5 class="jus">malesuada magna mollis euismod. Aenean eu leo quam.</h5>
+              <div class="grey-rule"></div>
+              <div class="social-link-group">
+                <a class="social-icon-link w-inline-block" href="#"><img src="images/social-03.svg" width="25">
+                </a>
+                <a class="social-icon-link w-inline-block" href="#"><img src="images/social-07.svg" width="25">
+                </a>
+                <a class="social-icon-link w-inline-block" href="#"><img src="images/social-18.svg" width="25">
+                </a>
+                <a class="social-icon-link w-inline-block" href="#"><img src="images/social-09.svg" width="25">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="article post-div">
+          <div class="big-hero"></div>
+          <div class="body-text">
+            <%= csrf_meta_tags %>
+            <h1 class="had"><%= @post.title %></h1>
+            <div class="date"><%= @post.created_at.strftime ("%A, %b %d") %></div>
+            <p><%= @post.content %></p>
+            <div class="buttonys">
+             <div class="button-wrapper" href="#"><span class= "button"><%= link_to "Edit", edit_post_path(@post)%></span></div>
+              <div class="button-wrapper" href="#"><span class= "button"><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "are you sure you want to delete"} %></span></div>
+            </div>
+          </div>
 
-<br>
-<br>
-<%= link_to "Edit", edit_post_path(@post)%>
-<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "are you sure you want to delete"} %>
+          </div>
+              <div class="button-wrapper"><a class="button w-button" href="all-posts.html">ALL POSTS</a>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/webflow.js"></script>
+<!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>
