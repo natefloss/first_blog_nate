@@ -24,18 +24,6 @@
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
 </head>
 <body>
-  <div class="navigation-bar w-nav" data-animation="default" data-collapse="medium" data-contain="1" data-duration="400">
-    <div class="w-container">
-      <a class="w-nav-brand" href="index.html">
-        <div class="site-name">Nathan</div>
-      </a>
-      <nav class="navigation-menu w-nav-menu" role="navigation"><a class="navigation-link w-nav-link" href="index.html">Home</a><a class="navigation-link w-nav-link" href="all-posts.html">Articles</a><a class="navigation-link w-nav-link" href="about.html">About</a><a class="navigation-link w-nav-link" href="contact.html">Contact</a>
-      </nav>
-      <div class="menu-button w-nav-button">
-        <div class="w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div>
   <div class="content-wrapper">
     <div class="w-container">
       <div class="w-row">
@@ -86,7 +74,7 @@
             <%= csrf_meta_tags %>
             <h1 class="had"><%= @post.title %></h1>
             <div class="date"><%= @post.created_at.strftime ("%A, %b %d") %></div>
-            <p><%= @post.content %></p>
+            <p><%= markdown @post.content %></p>
             <div class="buttonys">
              <div class="button-wrapper" href="#"><span class= "button"><%= link_to "Edit", edit_post_path(@post)%></span></div>
               <div class="button-wrapper" href="#"><span class= "button"><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "are you sure you want to delete"} %></span></div>
